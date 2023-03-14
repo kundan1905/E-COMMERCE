@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <link rel ="stylesheet"href="https://fonts.googleapis.com/css?family=Tangerine|Sofia">
+        <meta name ="viewport" content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" href="all.min.css">
+        <script src="pop.js"></script>
+<script language="javascript" type="text/javascript">
+    function openNav() {
+      document.getElementById("myNav").style.width = "100%";
+    }
+    
+    function closeNav() {
+      document.getElementById("myNav").style.width = "0%";
+    }
+
+    function validateForm() {
+     let x = document.forms["myForm"]["fname"].value;
+     let y = document.forms["myForm"]["lname"].value;
+    if (x == "" || y == "" ) {
+       alert("Name must be filled out");
+       return false;
+       }
+     }
+
+    
+   
+</script>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        input[type=text], select,textarea{
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 2px;
+            resize: none;
+
+            
+        }
+        input[type=number], select,textarea{
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 2px;
+            
+        }
+        input[type=sumbit]{
+            background-color: black;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+        }
+        input[type=submit]:hover{
+            background-color: rgb(248, 235, 235);
+
+        }
+        form{
+            border-radius: 5px;
+            background-color: rgb(231, 236, 236);
+            padding: 20px;
+    
+            
+            position: relative;
+            height:100%;
+            width: auto;
+            float: right;
+            opacity: 0.7;
+            
+            
+            
+            
+        }
+        .img{
+        
+    
+    background-position: center;
+    height: 700px;
+    
+    
+    
+    background-repeat: no-repeat;
+    
+    
+
+        }
+    .header_1{
+        font-family:"Tangerine", serif;
+        font-size : 80px;
+        padding: auto;
+        
+        color: rgb(67, 93, 100);
+        text-align: center;
+    }
+    
+    
+     .open-button {
+        background-color: #555;
+        color: white;
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        opacity: 0.8;
+        
+        margin: 50px;
+        float:right;
+        
+        bottom: 23px;
+        right: 28px;
+        width: 280px;
+        }
+     .popup{
+        z-index: 1;
+        display: none;
+     }
+     .cancel{
+        float: right;
+     }
+     .cancel:hover{
+        background-color:  rgb(124, 183, 235);
+     }
+     .map{
+        margin-left:30px;
+        margin-bottom: 20px;
+        position: relative;
+        opacity: 0.9;
+        
+     }
+    
+/* STYLES SPECIFIC TO FOOTER  */
+.footer{
+  width: 100%;
+  position: relative;
+  height: auto;
+  background-color:radial-gradient(#fff,black);
+}
+.footer .col {
+  width: 190px;
+  height: auto;
+  float: left;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding: 0px 20px 20px 20px;
+}
+.footer .col h2 {
+  margin: 0;
+
+  padding: 0;
+  
+  font-size: 12px;
+  line-height: 17px;
+  padding: 20px 0px 5px 0px;
+  color:black;
+  
+  text-transform: uppercase;
+  letter-spacing: 0.250em;
+}
+.footer .col ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.footer .col ul li {
+  color:black;
+  font-size: 14px;
+  
+  
+  padding: 5px 0px 5px 0px;
+  cursor: pointer;
+  transition: .2s;
+  -webkit-transition: .2s;
+  -moz-transition: .2s;
+}
+.social ul li {
+  display: inline-block;
+  padding-right: 5px !important;
+}
+
+.footer .col ul li:hover {
+  color:#555;
+  transition: .1s;
+  -webkit-transition: .1s;
+  -moz-transition: .1s;
+}
+.clearfix {
+  clear: both;
+}
+@media only screen and (min-width: 1280px) {
+  .contain {
+    width: 1200px;
+    margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 1139px) {
+  .contain .social {
+    width: 1000px;
+    display: block;
+  }
+  .social h2 {
+    margin: 0px;
+  }
+}
+@media only screen and (max-width: 950px) {
+  .footer .col {
+    width: 33%;
+  }
+  .footer .col h2 {
+    font-size: 14px;
+  }
+  .footer .col ul li {
+    font-size: 13px;
+  }
+}
+@media only screen and (max-width: 500px) {
+    .footer .col {
+      width: 100%;
+    }
+    .footer .col h2 {
+      font-size: 14px;
+    }
+    .footer .col ul li {
+      font-size: 13px;
+    }
+}
+@media only screen and (max-width: 340px) {
+  .footer .col {
+    width: 100%;
+  }
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.row_1{
+            display: flex;
+            flex-basis: 50%;
+            flex-wrap: wrap;
+             
+      }
+  .col_1{
+    flex-basis: 50%;
+  }
+  .col_2{
+    flex-basis:50% ;
+  }
+
+    
+  
+
+    </style>
+
+
+    </head>
+    <body>
+      <nav>
+             <h1 class="header_1">Contact us</h1>
+             <div class="goback"><a onclick="goback()">&#8592;</a></div>
+            
+       </nav>
+       <sectiom >
+         <div class="row_1">
+            <div class="col_1">
+              <button class="open-button" onmouseenter="openForm()">Open  Form</button>
+              <div  id="myFor" class="popup">
+              
+                  <form name="myForm" action="#" onsubmit="return validateForm()" method="post">   
+
+          
+                  <label for="fname">First name</label>
+                  <input type="text" id="fname" name="fname" placeholder="Your Firstname">
+                  <label for ="lname">Last name</label>
+                  <input type="text" id="lname" name="lname" placeholder="Your Lastname">
+                  <label for ="moblie number">Moblie number:</label><br>
+                  <input type="number" id=number  name="moblie number"   placeholder="Enter the number" ><br>
+                  <label for="subject">subject</label>
+                  <textarea  id="subject"  placeholder="any ....." style="height: 200px;"></textarea>
+                  <input type="submit" value="Submit">
+                  <button type="button" class="cancel" onclick="closeForm()">Close</button>
+
+              </form>
+              </div>
+
+              </div>
+              <div class="col_2">
+                <div class="map">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3682.1018908415103!2d86.41126671472985!3d22.6499893851431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f603360960dde1%3A0xe8281cf98a51f2f0!2sSuhagan%20Saree!5e0!3m2!1sen!2sin!4v1662215071674!5m2!1sen!2sin" width="500" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+            </div>
+         
+         
+       </sectiom>
+       
+
+
+        
+        
+    
+       
+        
+        <footer>
+           
+              <!-- FOOTER START -->
+              <div class="footer">
+                <div class="contain">
+                <div class="col">
+                  <h2>Company</h2>
+                  <ul>
+                   <li></li>
+                    <li>product</li>
+                    <li>Services</li>
+                    <li>login</li>
+                    
+                  </ul>
+                </div>
+                <div class="col">
+                  <h2>Products</h2>
+                  <ul>
+                    <li>About</li>
+                    <li>Mission</li>
+                    <li>Services</li>
+                    <li>Social</li>
+                    <li>Get in touch</li>
+                  </ul>
+                </div>
+                <div class="col">
+                  <h2>Accounts</h2>
+                  <ul>
+                    <li>social</li>
+                    <li>facebook</li>
+                    <li>instagram</li>
+                    <li>Social</li>
+                    
+                  </ul>
+                </div>
+                
+                
+                <div class="col social">
+                  <h2>Social</h2>
+                  <ul>
+                    <li><img src="image/fac.png" width="32" style="width: 32px;"></li>
+                    <li><img src="instagram.png" width="32" style="width: 32px;"></li>
+                   
+                  </ul>
+                </div>
+              <div class="clearfix"></div>
+              </div>
+              </div>
+              <!-- END OF FOOTER -->
+          </footer>
+        
+    </body>
+</html>

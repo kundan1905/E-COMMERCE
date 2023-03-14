@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/card.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Shopping Cart</h1>
+
+<div class="shopping-cart">
+
+  <div class="column-labels">
+    <label class=" product-image">Image</label>
+    <label class="product-details">Product</label>
+    <label class="product-price">Price</label>
+    <label class="product-quantity">Quantity</label>
+    <label class="product-removal">Remove</label>
+    <label class="product-line-price">Total</label>
+  </div>
+
+  <div  id="card_info">
+    
+
+   
+  </div>
+  <button onclick="cardremove()">CLick me</button>
+
+
+  <div class=" totals">
+    <div class="totals-item">
+      <label>Subtotal</label>
+      <div class="totals-value" id="cart-subtotal">71.97</div>
+    </div>
+    <div class="totals-item">
+      <label>Tax (5%)</label>
+      <div class="totals-value" id="cart-tax">3.60</div>
+    </div>
+    <div class="totals-item">
+      <label>Shipping</label>
+      <div class="totals-value" id="cart-shipping">15.00</div>
+    </div>
+    <div class="totals-item totals-item-total">
+      <label>Grand Total</label>
+      <div class="totals-value" id="cart-total">90.57</div>
+    </div>
+  </div>
+      
+      <button class="checkout">Checkout</button>
+
+</div>
+<script src="./card.js" type="module"></script>
+
+<script >
+    // window.onload=function(){setTimeout(removershimmer(),5000)};
+    var x =document.getElementById("card_info");
+ function removershimmer(){
+  x.classList.add("shimmerBG");
+
+ }
+
+ $(window).on('load',function(){
+  removershimmer()
+});
+setTimeout(() => {
+remove()
+  
+}, 6000);
+function remove(){
+  x.classList.remove("shimmerBG")
+}
+calPrice=(price)=>{
+  var quantity1=document.getElementById("product_quantity1").value;
+  var price=quantity1*price;
+  console.log(quantity1);
+  console.log(price);
+ var total=document.getElementById("total");
+  total.innerHTML=`${price}`
+
+}
+
+
+
+
+// var quantity=document.getElementById("product_quantity").value;
+// console.log(quantity)
+// /* Set rates + misc */
+// /* Set rates + misc */
+// var taxRate = 0.05;
+// var shippingRate = 15.00; 
+// var fadeTime = 300;
+
+
+
+// // kvn
+// $(".product-removal button").click(function () {
+//   removeItem(this);
+// });
+
+// /* Recalculate cart */
+// function recalculateCart() {
+//   var subtotal = 0;
+
+// //   /* Sum up row totals */
+//   $(".product").each(function () {
+//     subtotal += parseFloat($(this).children(".product-line-price").text());
+//   });
+
+//   /* Calculate totals */
+//   var tax = subtotal * taxRate;
+//   var shipping = subtotal > 0 ? shippingRate : 0;
+//   var total = subtotal + tax + shipping;
+
+//   /* Update totals display */
+//   $(".totals-value").fadeOut(fadeTime, function () {
+//     $("#cart-subtotal").html(subtotal.toFixed(2));
+//     $("#cart-tax").html(tax.toFixed(2));
+//     $("#cart-shipping").html(shipping.toFixed(2));
+//     $("#cart-total").html(total.toFixed(2));
+//     if (total == 0) {
+//       $(".checkout").fadeOut(fadeTime);
+//     } else {
+//       $(".checkout").fadeIn(fadeTime);
+//     }
+//     $(".totals-value").fadeIn(fadeTime);
+//   });
+//  }
+
+// /* Update quantity */
+function updateQuantity(quantityInput) {
+  /* Calculate line price */
+  var productRow = $(quantityInput).parent().parent();
+  var price = parseFloat(productRow.children(".product-price").text());
+  var quantity = $(quantityInput).val();
+
+  var linePrice = price * quantity;
+  console.log(linePrice)
+
+  /* Update line price display and recalc cart totals */
+  productRow.children(".product-line-price").each(function () {
+    $(this).fadeOut(fadeTime, function () {
+      $(this).text(linePrice.toFixed(2));
+      recalculateCart();
+      $(this).fadeIn(fadeTime);
+    });
+  });
+}
+$(".product-quantity input").change(function () {
+  updateQuantity(this);
+  console.log(this)
+
+});
+
+// /* Remove item from cart */
+// function removeItem(removeButton) {
+//   /* Remove row from DOM and recalc cart total */
+//   var productRow = $(removeButton).parent().parent();
+//   productRow.slideUp(fadeTime, function () {
+//     productRow.remove();
+//     recalculateCart();
+//   });
+// }
+
+</script>
+
+
+<!-- <script src="./newJs.js" type="text/javascript"></script> -->
+
+
+ 
+</body>
+
+</html>

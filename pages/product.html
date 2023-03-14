@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang ="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./styles/product.css">
+    
+        <link rel="stylesheet" href="./styles/login.css">
+        <link rel="stylesheet" href="../style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script> 
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;500;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="../pop.js" type="text/javascript"></script>
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+        
+
+        
+        
+        <style>
+             .search input[type=text]{
+                width:200px;
+                
+            padding: 12px 20px;
+            
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            right: 30px;
+
+            }
+          .logo h1{
+            padding: 4px;
+          }
+         </style>     
+    </head>
+    <body>
+       
+<section class="header_main"> 
+      <header>
+        <nav>
+            <div class="logo">
+               
+                <h1>SUHAGAN SAREE</h1>
+            </div>
+            <div class="search__bar__header">
+                <input type="text">
+                <input type="button" value="search">
+            </div>
+            <div class="cart__header__desktop">
+              <a href="../pages/card.html"   ><i class="fa-solid fa-cart-shopping" ></i></a>
+              <span class="total-count" id="card_count"></span>
+            </div>
+        </nav>
+    </header>
+          
+      <div class="overlay1" id="myheader1">
+        <a class="openbtn" id="main" onclick="openNav()">☰ <a>
+        <div id="destopview">
+        <a href="../index.html">HOME</a>
+        <a href="./product.html">PRODUCTS</a>
+        
+        <a href="#" class="cater_list">CATEGORIERS</a>
+        
+        <a href="adress.html">ABOUT US</a>
+        <a href="./contact.html">CONTACT US</a>
+        </div>
+
+        
+       
+      
+          <div class="action" >
+            
+            <div class="menu">
+              
+              <ul>
+                <li>
+                   <a href="user.html">My profile</a>
+                </li>
+                <li>
+                <a href="#">Edit profile</a>
+                </li>
+                <li>
+                 <a href="#">Inbox</a>
+                </li>
+                <li>
+                 <a href="#">Order</a>
+                </li>
+                <li><a href="#">Help</a></li>
+                <li>
+                  <a href="#" id="logoutbtn">Logout</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+      
+      
+   <div class="login-d">
+    <a onclick="openlog()" id="login_d" style="width:auto;">Login/ Sign up</a>
+   </div>
+    <div class="user_profil" id="logoutID">
+      
+        <div class="profile" onclick="menuToggle();">
+          <img src="https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI=" />
+        </div>
+
+    </div>
+      </div>
+
+    
+  
+  
+     
+            
+    
+        
+        <div id="mySidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+            
+              <a href="../index.html">HOME</a>
+              <a href="./product.html">PRODUCTS</a>
+              <a href="#" >Categoriers</a>
+              <a href="#">ABOUT US</a>
+              <a href="./contact.html">CONTACT US</a>
+            
+         </div>
+                  
+    <!-- <div class="main" id="main">
+      <a class="openbtn" onclick="openNav()">☰ </a> 
+      
+     <div class="login-d">
+        <a onclick="openlog2()"  style="width:auto;">Signup</a>
+       </div>
+      <div class="login-d">
+        <a onclick="openlog()" style="width:auto;">Login</a>
+      </div>
+    </div> -->
+    <div id="id01" class="modal" style="display: none;">
+  
+      <div class="modal-content animate"  >
+      
+          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+          
+        <div class="container">
+          <label for="uname"><b>Email</b></label><br>
+          <input type="text" placeholder="Enter Username email" id="Email-ID" name="uname"  >
+    
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" id ="Password-ID">
+            
+          <button type="submit"  id="login-ID">Login</button>
+          <!-- <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+          </label> -->
+          <p>Or Create account -<a href="#" onclick="openlog2()">Signup now</a></p>
+          <span class="psw" id="forgotID">Forgotpassword?</span>
+          <div id="snackbar1">USER lOGIN SUCCESSFULLY!</div>  
+          <div id="snackbar2">USER lOGOUT SUCCESSFULLY!</div> 
+          <div id="snackbar3">RESETPASSWORD EMAIL SEND TO YOUR REGISTER EMAIL-ID</div>  
+             <div id="snackbar5">INVAID EMAIL/WRONG PASSWORD</div>                        
+
+        </div>
+        
+      </div>
+  </div>
+  <div id="id02" class="modal"style="display: none;">
+
+      <div class="modal-content animate" >
+      
+          <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+          
+        <div class="container">
+          <label for="fname">First name</label>
+            <input type="text" id="fname-ID" name="fnameID" placeholder="Your Firstname">
+            <label for ="lname">Last name</label>
+            <input type="text" id="lname-ID" name="lnameID" placeholder="Your Lastname">
+             <label for ="moblie number">Email</label><br>
+              <input type="email" id="Email_ID"  name="email-ID "   placeholder="Enter the email"><br>
+              <label for="psw">Create Password:</label>
+              <input type="password" id="Password_ID"placeholder="Create password" name="password-ID" required>
+              <button type="submit"  id="Submit-ID1" >SIGN UP</button><br>
+              <p>Already have acount-<a href="#" onclick="openlog1()">Login now -></a></p>
+              <div id="snackbar">USER REGISTER SUCCESSFULLY!</div>
+        </div>
+      </div>
+  </div>
+</section>
+<div class="maincotain">
+          
+        
+        <div class="list2" id="myFor3">
+                    <div class="dropdown2">
+                       <div class="men_wear">
+                        <h1>MEN'S WEAR</h1>
+                        <ul>
+                          <li> Jeans</li>
+                          <li> T-shirt</li>
+                          <li> Shirt</li>
+                          <li>HAFF-PANT</li>
+                          <li> KURTA</li>
+                          <li> BELT</li>
+                          <li> CAUSAL T-SHIRT</li>
+                          <li> CINOS</li>
+                          <li> JOGGER'S</li>
+                        </ul>
+
+                       </div>
+                       <div class="ladies_wear"> 
+                        <h1>LADIE'S WEAR</h1>
+
+                        <ul>
+                          <li>SAREE</li>
+                          <li>SUIT-PIECE</li>
+                          <li>TOPS</li>
+                          <li>WESTERN-TOP</li>
+                          <li>JEANS </li>
+                          <li> GAWON</li>
+                          <li> LAHENGA </li>
+                          <li> ONE-PIECE</li>
+                          <li>PALAZO-SUIT </li>
+                          <li>KURTI</li>
+                        </ul>
+
+                       </div>
+                       <div class="kid_wear">
+                        
+                        <h1>KIDS'S WEAR</h1>
+                        <ul>
+                          <li>BOY'S AGE 1 TO 5</li>
+                          <li> GIRL'S AGE 1 TO 5</li>
+                          <li> BOY'S AGE 6 TO 9</li>
+                          <li>GIRL'S AGE 6 TO 9 </li>
+                          <li> BOY'S 10 TO 13</li>
+                          <li> GIRL'S 10 TO 13</li>
+                          <li> </li>
+                          <li> </li>
+                          <li> </li>
+                        </ul>
+
+                       </div>
+                        
+                    </div>
+        </div>  
+        <h3 class="recomd">NEW ARRIVAL</h3>   
+        
+        <div class="lo"  id =125lo>
+                
+            
+                
+                
+                <div class="lo-frame">
+                 <a href="./catory.html?KURTI"  > <img src="../image/kurtilogo.png" ></a>
+                     <div class="desc">KURTI</div>
+                </div>   
+            
+                
+                    
+                <div class="lo-frame">
+                  <a href="./catory.html?MENS">  <img src="../image/menslogo.png"></a>
+                  <div class="desc">MENS FORMAL</div>
+                    
+                </div>
+                <div class="lo-frame">
+                <a href="./catory.html?T-SHIRT">    <img src="../image/tshirticon.png"></a>
+                <div class="desc">T-SHIRT</div>
+                    
+                </div>
+                <div class="lo-frame">
+                <a href="./catory.html?SUIT_PIECE">    <img src="../image/suit pice/pice1.png" ></a>
+                <div class="desc">SUIT piece</div>
+                    
+                </div>
+                <div class="lo-frame">
+                 <a href ="./catory.html?LAHENGA">   <img src="../image/lahega.jpeg" ></a>
+                 <div class="desc">LAHENGA</div>
+                    
+                </div>
+                <div class="lo-frame">
+                <a href="./catory.html?KIDS"> <img src="../image/fullshipshirti.jpeg" ></a>
+                <div class="desc">KID'S WEAR</div>
+                    
+                </div>
+                <div class="lo-frame">
+                    <a href="./catory.html?PRODUCTS"> <img src="../image/jeans/jeans1.jpeg" ></a>
+                    <div class="desc">MENS JEANS</div>
+                        
+                </div>
+                <div class="lo-frame">
+                    <a href="./catory.html?PRODUCTS"> <img src="../image/mensjeans/jeans5.png" ></a>
+                    <div class="desc">MEN'S JEANS</div>
+                        
+                </div>
+                <div class="lo-frame">
+                    <a href="./catory.html?SAREE"> <img src="../image/sareebanari/saarebanari1.jpeg" ></a>
+                    <div class="desc">BANARSI SAREE</div>
+                        
+                </div>
+
+                
+        </div>
+        <div class="nextlo">
+            <div class="kid">
+                <a href="./catory.html"> <img src="../image/palazoo/palazo.jpeg" ></a>
+                <div class="desc">PALAZO</div>
+                    
+             </div>
+               <div class="kid">
+                <a href="./catory.html?KURTA"> <img src="../image/kurta/kurta.jpeg" ></a>
+                <div class="desc">KURTA</div>
+                    
+              </div>
+               <div class="kid">
+               <a href="./catory.htm?SHIRT"> <img src="../image/korlarhalftshirt/kolarshirt.jpeg" ></a>
+               <div class="desc">SHIRT</div>
+                
+                </div>
+                <div class="kid">
+                    <a href="./catory.html"> <img src="../image/SHIRT/SHIRT.jpeg" ></a>
+                    <div class="desc">MEN'S SHIRT</div>
+                     
+                 </div>
+                 <div class="kid">
+                    <a href="./catory.html?GIRL_JEANS"> <img src="../image/mensjeans/jeans7.png" ></a>
+                    <div class="desc">GIRL JEANS</div>
+                     
+                </div>
+                <div class="kid">
+                    <a href="./catory.html"> <img src="../image/kids/kidscover.jpg" ></a>
+                    <div class="desc">KID'S</div>
+                     
+                 </div>
+                 <div class="kid">
+                    <a href="./catory.html"> <img src="../image/jeans/girljeans1.jpeg" ></a>
+                    <div class="desc">GIRL JEANS</div>
+                     
+                </div>
+                <div class="kid">
+                    <a href="./catory.html"> <img src="../image/jeans/girljeans1.jpeg" ></a>
+                    <div class="desc">GIRL JEANS</div>
+                     
+                </div>
+
+        </div>
+        <h3 class="recomd">RECOMMENDED</h3>   
+        
+        
+        <div class="row" id="card__container">
+            
+        </div>
+        <div class="row" id="saree__container">
+       </div>
+    </div>
+        <div class="uparrow" id="uparrow" title="Go-Top"><img src ="../image/up-arrow.png"> </div>
+
+        <footer>
+           
+          <!-- FOOTER START -->
+          <div class="footer">
+            <div class="contain">
+            <div class="col">
+              <h2>Company</h2>
+              <ul>
+                
+                <li> <a onclick="openlog()" id="login_d" style="width:auto;">Login/ Sign up</a>
+                </li>
+                
+                <li>Services</li>
+                <li>login</li>
+                
+              </ul>
+            </div>
+            <div class="col">
+              <h2>Products</h2>
+              <ul>
+                <li>About</li>
+                <li>Mission</li>
+                <li>Services</li>
+                <li>Social</li>
+                <li>Get in touch</li>
+              </ul>
+            </div>
+            <div class="col">
+              <h2>Accounts</h2>
+              <ul>
+                <li>Social</li>
+                <li>Facebook</li>
+                <li></li>
+                <li></li>
+                
+              </ul>
+            </div>
+            
+            
+            <div class="col social">
+              <h2>Social</h2>
+              <ul>
+                <li><img src="../image/fac.png" width="32" style="width: 32px;"></li>
+                <li><img src="instagram.png" width="32" style="width: 32px;"></li>
+               
+              </ul>
+            </div>
+          
+          </div>
+          </div>
+          <!-- END OF FOOTER -->
+      </footer>
+      
+        <script>
+          $(document).ready(function(){
+  $("#heart").click(function(){
+    if($("#heart").hasClass("liked")){
+      $("#heart").html('<i class="fa-sharp fa-regular fa-heart" aria-hidden="true"></i>');
+      $("#heart").removeClass("liked");
+    }else{
+      $("#heart").html('<i class="fa fa-heart" aria-hidden="true"></i>');
+      $("#heart").addClass("liked");
+    }
+  });
+});
+            function openForm3() {
+            document.getElementById("myFor").style.display= "block";
+            }
+
+            function closeForm3() {
+            document.getElementById("myFor").style.display = "none";
+            }
+           
+            // Get the modal
+           var modal = document.getElementById('id01');
+
+             // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+           //header
+         //header
+      window.onscroll =function(){myfunction()};
+      var header=document.getElementById("myheader1");
+      var sticky =header.offsetTop;
+      function myfunction(){
+        if( window.pageYOffset> sticky){
+          header.classList.add("sticky");
+        }else {
+          header.classList.remove("sticky");
+        }
+      }
+           //user profil
+            function menuToggle() {
+        const toggleMenu = document.querySelector(".menu");
+        toggleMenu.classList.toggle("active");
+      }
+
+      // function list() {
+      //   const toggleMenu = document.querySelector(".list2");
+      //   toggleMenu.classList.toggle("display");
+      // }
+           
+           
+        
+              
+        </script>
+
+       
+       <script src="../index.js" type="module"></script>    
+       <script src="../components//productCard.js"></script>
+   </body>
+</html>
